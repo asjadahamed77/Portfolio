@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { assets } from "@/assets/assets";
 
-const Navbar = ({isDarkMode, setIsDarkMode}) => {
+const Navbar = ({ isDarkMode, setIsDarkMode }) => {
   const sideMenuRef = useRef();
 
   const [isScroll, setIsScroll] = useState(false);
@@ -42,9 +42,19 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
         }`}
       >
         <a href="#top">
-          <Image src={isDarkMode ? assets.logo_dark :assets.logo} alt="logo" className="w-28 cursor-pointer mr-14" />
+          <Image
+            src={isDarkMode ? assets.logo_dark : assets.logo}
+            alt="logo"
+            className="w-28 cursor-pointer mr-14"
+          />
         </a>
-        <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll? "":"bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"} `}>
+        <ul
+          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${
+            isScroll
+              ? ""
+              : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"
+          } `}
+        >
           <li>
             <a href="#top" className="font-ovo">
               Home
@@ -72,18 +82,31 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
           </li>
         </ul>
         <div className="cursor-pointer flex items-center gap-4">
-          <button onClick={()=> setIsDarkMode(prev => !prev)}>
-            <Image src={isDarkMode ? assets.sun_icon : assets.moon_icon} alt="moon" className="w-6 cursor-pointer" />
+          <button onClick={() => setIsDarkMode((prev) => !prev)}>
+            <Image
+              src={isDarkMode ? assets.sun_icon : assets.moon_icon}
+              alt="moon"
+              className="w-6 cursor-pointer"
+            />
           </button>
           <a
             href="#contact"
             className="hidden lg:flex items-center gap-3  px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-ovo dark:border-white/50 "
           >
             Contact
-            <Image src={isDarkMode? assets.arrow_icon_dark : assets.arrow_icon} alt="contact" className="w-3" />
+            <Image
+              src={isDarkMode ? assets.arrow_icon_dark : assets.arrow_icon}
+              alt="contact"
+              className="w-3"
+            />
           </a>
           <button className="block md:hidden ml-3">
-            <Image onClick={openMenu} src={isDarkMode?assets.menu_white :assets.menu_black} alt="menu" className="w-6 cursor-pointer " />
+            <Image
+              onClick={openMenu}
+              src={isDarkMode ? assets.menu_white : assets.menu_black}
+              alt="menu"
+              className="w-6 cursor-pointer "
+            />
           </button>
         </div>
         {/* Mobile Menu */}
@@ -92,7 +115,12 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
           className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 h-screen w-64 bg-rose-50 transition duration-500 dark:text-purple-950"
         >
           <div className="absolute top-6 right-6 cursor-pointer">
-            <Image onClick={closeMenu} className="w-5" src={assets.close_black} alt="close" />
+            <Image
+              onClick={closeMenu}
+              className="w-5"
+              src={assets.close_black}
+              alt="close"
+            />
           </div>
           <li>
             <a href="#top" className="font-ovo" onClick={closeMenu}>
