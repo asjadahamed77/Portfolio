@@ -39,6 +39,7 @@ const About = () => {
               ))
             }
           </ul>
+        
           <h4 className="my-6 text-gray-700 font-ovo">Tools I use</h4>
           <ul className="flex items-center gap-3 sm:gap-5">
             {
