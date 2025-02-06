@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { assets } from "@/assets/assets";
-const Header = () => {
+import { motion } from "motion/react"
+const Header = ({isDarkMode, setIsDarkMode}) => {
   return (
     <div className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
       <div>
@@ -24,10 +25,10 @@ const Header = () => {
         scalable backends for impactful digital solutions.
       </p>
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
-        <a href="#contact" className="px-10 py-3 border rounded-full border-white bg-black text-white flex items-center gap-2 cursor-pointer">
+        <a href="#contact" className="px-10 py-3 border rounded-full border-white bg-black text-white flex items-center gap-2 cursor-pointer dark:bg-transparent">
             contact me <Image src={assets.right_arrow_white} alt="arrow" className="w-4"></Image>
         </a>
-        <a href="/sample-resume.pdf" download className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 cursor-pointer">
+        <a href="/sample-resume.pdf" download className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 cursor-pointer dark:bg-white  dark:text-black">
             my resume <Image src={assets.download_icon} alt="arrow" className="w-4"></Image>
         </a>
       </div>
