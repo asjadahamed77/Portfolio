@@ -40,7 +40,7 @@ const Works = ({ isDarkMode, setIsDarkMode }) => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.6 }}
-        className="grid grid-cols-auto my-10 gap-5 dark:text-black"
+        className="grid grid-cols-auto my-10 gap-5 dark:text-black xl:grid-cols-4"
       >
         {workData.map((project, index) => (
           <motion.div
@@ -49,7 +49,7 @@ const Works = ({ isDarkMode, setIsDarkMode }) => {
             transition={{ duration: 0.6, delay: 0.6 }}
             key={index}
             style={{ backgroundImage: `url(${project.bgImage})` }}
-            className="bg-cover bg-center bg-no-repeat rounded-lg aspect-square relative cursor-pointer group"
+            className="bg-cover bg-center bg-no-repeat rounded-lg aspect-square relative cursor-pointer group "
           >
             <div className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
               <div>

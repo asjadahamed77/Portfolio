@@ -30,7 +30,7 @@ const Contact = ({ isDarkMode, setIsDarkMode }) => {
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.6 }}
       id="contact"
       style={
         isDarkMode
@@ -42,7 +42,7 @@ const Contact = ({ isDarkMode, setIsDarkMode }) => {
       <motion.h4
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
         className="text-center mb-2 text-lg font-ovo"
       >
         Connect with me
@@ -67,7 +67,7 @@ const Contact = ({ isDarkMode, setIsDarkMode }) => {
       <motion.form
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.95 }}
+        transition={{ duration: 0.85 }}
         onSubmit={onSubmit}
         className="max-w-2xl mx-auto"
       >
