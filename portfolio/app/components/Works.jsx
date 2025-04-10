@@ -2,6 +2,8 @@ import { assets, workData } from "@/assets/assets";
 import React from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
+import { FaLink } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
 const Works = ({ isDarkMode, setIsDarkMode }) => {
   return (
     <motion.div
@@ -40,7 +42,7 @@ const Works = ({ isDarkMode, setIsDarkMode }) => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.6 }}
-        className="grid grid-cols-auto my-10 gap-5 dark:text-black xl:grid-cols-4"
+        className="grid grid-cols-auto my-10 gap-5  xl:grid-cols-4"
       >
         {workData.map((project, index) => (
           <motion.div
@@ -48,22 +50,34 @@ const Works = ({ isDarkMode, setIsDarkMode }) => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             key={index}
-            style={{ backgroundImage: `url(${project.bgImage})` }}
-            className="bg-cover bg-center bg-no-repeat rounded-lg aspect-square relative cursor-pointer group "
+          
+            className="p-2   hover:shadow-black duration-500 transition cursor-pointer hover:-translate-y-1 dark:hover:shadow-white rounded-lg"
           >
-            <div className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
-              <div>
-                <h2 className="font-semibold">{project.title}</h2>
-                <p className="text-sm text-gray-700">{project.description}</p>
+            <img src={project.bgImage} alt={project.name} />
+              <div className="p-2 mt-2 ">
+                <p className="font-semibold  font-ovo whitespace-nowrap overflow-hidden text-ellipsis">{project.title}</p>
+                <p className="whitespace-nowrap overflow-hidden text-ellipsis mt-[-2px]">{project.description}</p>
               </div>
-              <div className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition duration-500">
-                <Image
-                  src={assets.send_icon}
-                  alt="icon"
-                  className="w-5"
-                ></Image>
+              <div className="flex justify-end gap-2 mt-2 items-center">
+                <a
+                  href={project.git}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500  dark:text-white hover:opacity-75 duration-300 transition-all"
+                >
+                  <FaGithub size={25} />
+                </a>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 dark:text-white  hover:opacity-75 duration-300 transition-all ml-2"
+                >
+                  <FaLink size={25} />
+                </a>
               </div>
-            </div>
+              
+            
           </motion.div>
         ))}
       </motion.div>
