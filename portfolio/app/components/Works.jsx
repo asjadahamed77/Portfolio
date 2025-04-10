@@ -67,7 +67,9 @@ const Works = ({ isDarkMode, setIsDarkMode }) => {
                 >
                   <FaGithub size={25} />
                 </a>
-                <a
+               {
+                project.link && (
+                  <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -75,6 +77,8 @@ const Works = ({ isDarkMode, setIsDarkMode }) => {
                 >
                   <FaLink size={25} />
                 </a>
+                )
+               }
               </div>
               
             

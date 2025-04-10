@@ -89,7 +89,7 @@ export const workData = [
     description: "Appointment Booking App",
     bgImage: "/DTM.png",
     git: "https://github.com/asjadahamed77/DT-Medical-Centre.git",
-    link: "https://dt-medical-centre-c.vercel.app/#speciality",
+    link: "https://dt-medical-centre-c.vercel.app",
   },
   {
     title: "DT Medical Centre Admin",
